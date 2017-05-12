@@ -94,22 +94,29 @@
             }
             //筛选
         $scope.$location = $location;
-        $scope.selected = {};
+        $scope.xuanze = {};
         console.log($location.hash());
         $scope.$watch('$location.hash()', function(now, old) {
             switch (now) {
                 case '/active':
-                    $scope.selected = {completer:true};
+                    $scope.xuanze = { completer: false };
                     break;
                 case '/completed':
-                    $scope.selected =  {completer:false};
+                    $scope.xuanze = { completer: true };
                     break;
                 default:
-                    $scope.selected ={};
+                    $scope.xuanze = {};
                     break;
             }
         });
-        //任务对象
+        //自定义比较函数
+        $scope.bijiao = function(a, b) {
+                console.log(a);
+                console.log(b);
+                return a === b;
+
+        }
+            //任务对象
         $scope.data = [
             { id: 1, taskName: "defaultTaskOne", completer: false },
             { id: 2, taskName: "defaultTaskTwo", completer: true }

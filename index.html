@@ -29,7 +29,7 @@
 					</div>
 					<input class="edit" value="Create a TodoMVC template">
 				</li>  -->
-				<li  ng-repeat="d in data | filter :selected " ng-class="{completed:d.completer,editing:d.id==editId}">
+				<li  ng-repeat="d in data | filter :xuanze :bijiao" ng-class="{completed:d.completer,editing:d.id==editId}">
 					<div class="view">
 						<input class="toggle" type="checkbox" ng-model="d.completer">
 						<label ng-dblclick="editing(d.id)" >{{d.taskName}}</label>
@@ -49,13 +49,13 @@
 				<!-- Remove this if you don't implement routing -->
 				<ul class="filters">
 					<li>
-						<a ng-class="{selected:$location.hash()=='/'}" href="#/" >All</a>
+						<a ng-class="{selected:xuanze.completer==undefined}" href="#/" >All</a>
 					</li>
 					<li>
-						<a ng-class="{selected:$location.hash()=='/active'}" href="#/active" >Active</a>
+						<a ng-class="{selected:xuanze.completer==false}" href="#/active" >Active</a>
 					</li>
 					<li>
-						<a ng-class="{selected:$location.hash()=='/completed'}" href="#/completed">Completed</a>
+						<a ng-class="{selected:xuanze.completer==true}" href="#/completed">Completed</a>
 					</li>
 				</ul>
 				<!-- Hidden if no completed items are left ↓ -->
