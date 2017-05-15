@@ -2,13 +2,40 @@
     'use strict';
 
     // Your starting point. Enjoy the ride!
-    var todo = angular.module("todo", []);
+    var todo = angular.module("todo", ['ngRoute']);
     todo.directive('autoFocus', function() {
         return function(scope, element) {
             element[0].focus();
         };
     });
-    todo.controller("todoCtl", function($scope, $location) {
+    //路由配置
+    todo.config(['$routeProvider', function($routeProvider) {
+        $routeProvider.when('/:name?', {
+            controller: 'todoCtl',
+            templateUrl: 'routeDome'
+        })
+        .otherwise({
+            redirctTo:"/"
+        });
+    }]);
+
+    todo.controller("todoCtl", function($scope, $location, $routeParams,$route) {
+        //路由筛选
+        $scope.xuanze = {};
+        var status=$routeParams.name;
+        console.log(status);
+        switch (status) {
+            case 'active':
+                $scope.xuanze = { completer: false };
+                break;
+            case 'completed':
+                $scope.xuanze = { completer: true };
+                break;
+            default:
+                $route.updateParams({name :''});
+                $scope.xuanze = {};
+                break;
+        }
         //递归动态获取不重复的新数组ID
         function getId() {
             var id = Math.random();
@@ -92,30 +119,31 @@
                     }
                 }
             }
-            //筛选
-        $scope.$location = $location;
-        $scope.xuanze = {};
-        console.log($location.hash());
-        $scope.$watch('$location.hash()', function(now, old) {
-            switch (now) {
-                case '/active':
-                    $scope.xuanze = { completer: false };
-                    break;
-                case '/completed':
-                    $scope.xuanze = { completer: true };
-                    break;
-                default:
-                    $scope.xuanze = {};
-                    break;
-            }
-        });
-        //自定义比较函数
+            //自定义的筛选函数，我们使用路由技术
+            /*$scope.$location = $location;
+                $scope.xuanze = {};
+                console.log($location.hash());
+                $scope.$watch('$location.hash()', function(now, old) {   
+                    switch (now) {
+                        case '/active':
+                            $scope.xuanze = { completer: false };
+                            break;
+                        case '/completed':
+                            $scope.xuanze = { completer: true };
+                            break;
+                        default:
+                            $scope.xuanze = {};
+                            break;
+                    }
+                 });
+        */
+            //自定义比较函数
         $scope.bijiao = function(a, b) {
                 console.log(a);
                 console.log(b);
                 return a === b;
 
-        }
+            }
             //任务对象
         $scope.data = [
             { id: 1, taskName: "defaultTaskOne", completer: false },
