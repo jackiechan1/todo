@@ -1,8 +1,104 @@
-/*
-
-app-template.css overrides
-
-remove this comment if used
-remove this file if not
-
-*/
+/* 头部 css */
+ 	
+ 	.zypg-report .zypg-head {
+ 	    padding: 0;
+ 	    border: 0;
+ 	}
+ 	
+ 	.zypg-report > div {
+ 	    width: 1100px;
+ 	    position: relative;
+ 	}
+ 	
+ 	.zypg-report .zypg-head .zypg-head-img img {
+ 	    width: 100%;
+ 	}
+ 	
+ 	.zypg-report > div .yemei {
+ 	    position: relative;
+ 	    top: 0;
+ 	    left: 42%;
+ 	    height: 50px;
+ 	    width: 100%;
+ 	}
+ 	
+ 	.zypg-report > div.zypg-blue {
+ 	    background: #94badf;
+ 	}
+ 	
+ 	.zypg-report > div.zypg-white {
+ 	    background: #fff;
+ 	}
+ 	
+ 	.zypg-report > div .yemei span {
+ 	    margin: 12px 10px 5px 20px;
+ 	    font-size: 22px;
+ 	}
+ 	
+ 	.zypg-report > div .yemei span.white {
+ 	    color: #fff;
+ 	}
+ 	
+ 	.zypg-report > div .yemei span.blue {
+ 	    color: #7ec9e9;
+ 	}
+ 	
+ 	.zypg-report > div .yemei h3 {
+ 	    margin: 12px 0 0 0;
+ 	    color: #fafafa!important;
+ 	    font-size:30px;
+			 font-weight: 400;
+			 text-shadow: 1px 1px 8px #444;
+ 	}
+ 	
+ 	.zypg-report > div .yemei h3.white {
+ 	    color: #fff;
+ 	}
+ 	
+ 	.zypg-report > div .yemei h3.blue {
+ 	    color: #7ec9e9;
+ 	}
+ 	
+ 	.zypg-report > div .content {
+ 	    padding: 20px 35px;
+ 	    box-sizing: border-box;
+ 	}
+ 	
+ 	.zypg-report > div .yejiao {
+ 	    position: relative;
+ 	    bottom: 0;
+ 	    left: 0;
+ 	    height: 50px;
+ 	    border-top: 1px solid lightgray;
+ 	    width: 100%;
+ 	    text-align: right;
+ 	}
+ 	
+ 	.zypg-report > div .yejiao h4 {
+ 	    line-height: 50px;
+ 	    margin: 0 20px 0 0;
+ 	    color: lightgray;
+ 	    font-weight: 200;
+ 	}
+ 	
+ 	.content table .table-td {
+ 	    width: 50%;
+ 	}
+ 	
+ 	.content table .table-td span.left-2 {
+ 	    margin-left: 25%;
+ 	}
+ 	
+ 	.content table .table-td span.right-2 {
+ 	    margin-right: 25%;
+ 	    float: right;
+ 	}
+ 	
+ 	.content table span.left-4 {
+ 	    margin-left: 12.3%;
+ 	}
+ 	
+ 	.content table span.right-4 {
+ 	    margin-right: 30.9%;
+ 	    float: right;
+ 	}

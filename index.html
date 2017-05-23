@@ -13,7 +13,7 @@
 <body ng-app="todo">
 	<div ng-view></div>
     <script id="routeDome" type="text/ng-template">
-        <section class="todoapp">
+        <section class="todoapp" ng-controller="todoCtl">
             <header class="header">
                 <h1>todos</h1>
                 <input class="new-todo" placeholder="What needs to be done?" ng-keyup="enterUp($event)" autofocus ng-model="jiaohu">
@@ -78,6 +78,8 @@
     <script type="text/javascript" src="js/angular.js"></script>
     <script type="text/javascript" src="js/angular-route.min.js"></script>
     <script src="js/app.js"></script>
+    <script type="text/javascript" src="js/controller/mian.js"></script>
+    <script type="text/javascript" src="js/service/mian.js"></script>
 </body>
 
 </html>
